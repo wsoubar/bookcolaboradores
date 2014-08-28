@@ -88,6 +88,20 @@
 			<artifactId>resteasy-spring</artifactId>
 			<version>${resteasy.vesion}</version>
 		</dependency>
+		
+		<!-- mysql jdbc driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.31</version>
+		</dependency>
+		
+		<!-- ORACLE database driver -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0</version>
+		</dependency>
 
 		<!-- JAVA -->
 		<dependency>
