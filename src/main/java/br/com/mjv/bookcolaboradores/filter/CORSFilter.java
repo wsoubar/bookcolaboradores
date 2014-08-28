@@ -37,7 +37,7 @@ public class CORSFilter implements Filter {
     		String key = (String) headerNames.nextElement();
     		String value = httpRequest.getHeader(key);
     		map.put(key, value);
-    		System.out.println("key: "+key+ " | value: "+value);
+    		//System.out.println("key: "+key+ " | value: "+value);
     	}
              
         

@@ -22,7 +22,7 @@
            ">
 
 	<context:annotation-config />
-	<context:component-scan base-package="br.com.mjv.resteasysample" />
+	<context:component-scan base-package="br.com.mjv.bookcolaboradores" />
 
 	<!-- enabling annotation driven configuration /-->
 	<tx:annotation-driven transaction-manager="transactionManager" />
