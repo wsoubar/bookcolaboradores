@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="BookApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book de Bolaboradores</title>
+  <link rel="stylesheet" href="resources/v1/css/bootstrap.css">
+  <link rel="stylesheet" href="resources/v1/css/custom.css">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="NavbarCtrl as navctrl">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Book de Colaboradores</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" collapse="isCollapsed">
+      <ul class="nav navbar-nav">
+         <!-- <li><a href="#">Link</a></li> -->
+      </ul>
+      <form name="formBusca" id="formBusca" class="navbar-form navbar-left" role="search">
+        <div class="input-group">
+            <input id="busca" name="busca" type="text" class="form-control" placeholder="nome, depart., cargo" />
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="button" ng-click="navctrl.screenWidth()"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>    
+      </form>
+      <span ng-controller="AutenticacaoCtrl as authCtrl">
+      <form name="loginForm" class="navbar-form navbar-right" role="form" ng-hide="isLogged" novalidate>
+        <div class="form-group has-feedback has-feedback-left">
+          <!-- <i class="glyphicon glyphicon-envelope form-control-feedback"></i> -->
+          <input id="username" name="username" type="text" placeholder="Email" ng-model="authCtrl.username"
+          ng-class="{'has-error' : loginForm.username.$invalid && loginForm.username.$dirty, 'has-success':loginForm.username.$valid}" class="form-control" >
+        </div>
+        <div class="form-group">
+          <input id="senha" name="senha" type="password" placeholder="Password" ng-model="authCtrl.senha" class="form-control" >
+        </div>
+        <button type="submit" class="btn btn-success" ng-click="authCtrl.login()"><span class="glyphicon glyphicon-log-out"></span> Entrar</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right" ng-show="isLogged">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{usuario.email}} <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#perfil/{{usuario.id}}"><span class="glyphicon glyphicon-user"></span> Meu Perfil</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Configurações</a></li>
+            <li class="divider"></li>
+            <li><a href="#" ng-click="authCtrl.logout()"><span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
+          </ul>
+        </li>
+      </ul>
+      </span>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  <div id="main" ng-view></div>
+  <script type="text/javascript" src="resources/v1/js/angular.js"></script>
+  <script type="text/javascript" src="resources/v1/js/angular-cookies.js"></script>
+  <script type="text/javascript" src="resources/v1/js/angular-route.js"></script>
+  <script type="text/javascript" src="resources/v1/js/underscore.js"></script>
+  <script type="text/javascript" src="resources/v1/js/ui-bootstrap.min.js" ></script>
+  <script type="text/javascript" src="resources/v1/js/app/usuario.js"></script>
+  <script type="text/javascript" src="resources/v1/js/app/app.js"></script>
+</body>
+</html>
