@@ -13,7 +13,12 @@
 			<id>JBoss repository</id>
 			<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
 		</repository>
-	</repositories>
+<!-- 		<repository>
+		    <id>spring-milestone</id>
+		    <name>Spring Maven MILESTONE Repository</name>
+		    <url>http://repo.spring.io/libs-milestone</url>
+		</repository>
+ -->	</repositories>
 	<properties>
 		<spring.version>3.1.0.RELEASE</spring.version>
 <!-- 		<resteasy.vesion>3.0.8.Final</resteasy.vesion> -->
@@ -90,21 +95,25 @@
 		</dependency>
 		
 		<!-- mysql jdbc driver -->
+		<!-- 
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.31</version>
 		</dependency>
-		
+		 -->
+		 
 		<!-- ORACLE database driver -->
+		<!-- 
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0</version>
 		</dependency>
-		
+		 -->
 		
 		<!-- Hibernate -->
+		<!-- 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -151,8 +160,26 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.6.4</version>
-        </dependency>
+        </dependency> -->
+	
+		<!-- jongo / mongodb -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>2.12.3</version>
+		</dependency>
 
+<!--		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>1.6.0.RELEASE</version>
+		</dependency>
+ -->		
+ 		<dependency>
+			<groupId>org.jongo</groupId>
+			<artifactId>jongo</artifactId>
+			<version>1.1</version>
+		</dependency>
 
 		<!-- JAVA -->
 		<dependency>
